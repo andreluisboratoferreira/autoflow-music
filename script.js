@@ -1,6 +1,7 @@
 const player = document.getElementById("player");
 const playerImg = document.getElementById("playerImg");
 const playerNome = document.getElementById("playerNome");
+const pesquisa = document.getElementById("pesquisa");
 
 let musicaAtual = null;
 
@@ -54,5 +55,27 @@ function stopMusica() {
     musicaAtual.currentTime = 0;
 
     player.style.display = "none";
+
+}
+
+pesquisa.addEventListener("input", pesquisarMusicas);
+
+function pesquisarMusicas() {
+
+    const texto = pesquisa.value.toLowerCase();
+
+    const musicas = document.querySelectorAll(".musica");
+
+    musicas.forEach(function(musica) {
+
+        const nome = musica.querySelector("h5").textContent.toLowerCase();
+
+        if (nome.includes(texto)) {
+            musica.style.display = "flex";
+        } else {
+            musica.style.display = "none";
+        }
+
+    });
 
 }

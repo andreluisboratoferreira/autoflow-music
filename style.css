@@ -427,3 +427,35 @@ h3{
     }
 
 }
+
+.menu-contexto {
+    display: none;
+
+    position: fixed;
+
+    background: #002b2b;
+
+    border: 2px solid #ffffff44;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    min-width: 200px;
+
+    z-index: 9999;
+}
+
+.menu-contexto div {
+    padding: 12px 15px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.menu-contexto div:hover {
+    background: #9900ff;
+}

@@ -79,3 +79,55 @@ function pesquisarMusicas() {
     });
 
 }
+
+// ==============================
+// MENU DE CONTEXTO
+// ==============================
+
+const menu = document.getElementById("menuContexto");
+
+let musicaSelecionada = null;
+
+// Abre o menu personalizado
+document.querySelectorAll(".musica").forEach((musica) => {
+
+    musica.addEventListener("contextmenu", function(e) {
+
+        e.preventDefault();
+
+        musicaSelecionada = this;
+
+        menu.style.display = "block";
+        menu.style.left = e.clientX + "px";
+        menu.style.top = e.clientY + "px";
+
+    });
+
+});
+
+// Fecha o menu ao clicar em qualquer lugar
+document.addEventListener("click", () => {
+    menu.style.display = "none";
+});
+
+// ==============================
+// BAIXAR MP3
+// ==============================
+
+function baixarMusica() {
+
+    if (!musicaSelecionada) return;
+
+    const caminho = musicaSelecionada.dataset.audio;
+    const nome = musicaSelecionada.dataset.nome;
+
+    const link = document.createElement("a");
+
+    link.href = caminho;
+    link.download = nome + ".mp3";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+}

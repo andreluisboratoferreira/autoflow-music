@@ -20,6 +20,8 @@ function tocarMusica(idAudio, nome, imagem) {
     // Pega a nova música
     musicaAtual = document.getElementById(idAudio);
 
+    musicaAtual.loop = true
+
     // Atualiza o mini player
     playerImg.src = imagem;
     console.log(playerImg.src)

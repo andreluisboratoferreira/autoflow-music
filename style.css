@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(to left,#000000,#000002);
+    color:#fff;
+    overflow-x:hidden;
+    min-height:100vh;
+}
+
+h3{
+    font-family:"Roboto Mono", monospace;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    width:100%;
+
+    padding:15px 20px;
+
+    background:#002b2b;
+
+    border-bottom:2px solid #ffffff5b;
+}
+
+.title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.title:hover{
+    color:#9900ff;
+}
+
+/* ---------------- PESQUISA ---------------- */
+
+.search{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    flex:1;
+
+    min-width:250px;
+    max-width:500px;
+
+    border:3px solid #fff;
+
+    border-radius:10px;
+
+    padding:10px 15px;
+}
+
+.search input{
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    outline:none;
+
+    color:#fff;
+
+    caret-color:#fff;
+
+    font-size:16px;
+}
+
+/* ---------------- MENU ---------------- */
+
+.lista ul{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+    list-style:none;
+}
+
+.lista a{
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    transition:.2s;
+}
+
+.lista a:hover{
+    color:#9900ff;
+}
+
+/* ---------------- PLAYER ---------------- */
+
+.player{
+
+    position:fixed;
+
+    left:50%;
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    display:none;
+
+    align-items:center;
+
+    gap:15px;
+
+    width:min(95%,420px);
+
+    background:#002b2b;
+
+    border:2px solid #ffffff5b;
+
+    border-radius:15px;
+
+    padding:12px 20px;
+
+    animation:aparecer .2s ease;
+
+    z-index:999;
+}
+
+.player img{
+
+    width:60px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+}
+
+.player button{
+
+    cursor:pointer;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    margin-right:10px;
+}
+
+.player button:hover{
+
+    color:#9900ff;
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translate(-50%,30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translate(-50%,0);
+
+    }
+
+}
+/* ---------------- GRID DAS MÚSICAS ---------------- */
+
+.musicas{
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    padding:30px;
+
+    width:100%;
+
+    max-width:1600px;
+
+    margin:0 auto;
+
+    justify-items:center;
+}
+
+/* ---------------- CARD DA MÚSICA ---------------- */
+
+.musica{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    width:220px;
+
+    height:300px;
+
+    padding:15px;
+
+    border:2px solid white;
+
+    border-radius:10px;
+
+    background:#91919136;
+
+    transition:.2s;
+
+    cursor:pointer;
+
+}
+
+.musica:hover{
+
+    background:#9900ff;
+
+    transform:scale(1.05);
+
+}
+
+.musica button{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+.musica img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.musica h5{
+
+    color:white;
+
+    font-size:22px;
+
+    text-align:center;
+
+}
+
+/* ---------------- NOTEBOOK ---------------- */
+
+@media(max-width:1400px){
+
+    .musicas{
+
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    }
+
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .search{
+
+        width:100%;
+
+        max-width:600px;
+
+    }
+
+    .lista ul{
+
+        justify-content:center;
+
+    }
+
+    .musicas{
+
+        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+        padding:20px;
+
+    }
+
+}
+
+/* ---------------- CELULAR ---------------- */
+
+@media (max-width: 600px){
+
+    .sidebar{
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .title{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .search{
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .lista ul{
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .lista a{
+        font-size: 16px;
+    }
+
+    .musicas{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 15px;
+        justify-items: center;
+    }
+
+    .musica{
+        width: 100%;
+        height: auto;
+        padding: 8px;
+    }
+
+    .musica img{
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .musica h5{
+        font-size: 11px;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .player{
+        width: 95%;
+        padding: 10px 15px;
+    }
+
+    .player img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .player h4{
+        font-size: 15px;
+    }
+
+}

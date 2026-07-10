@@ -19,21 +19,18 @@ h3{
 
 /* ---------------- SIDEBAR ---------------- */
 
-.sidebar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:wrap;
+.sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
-    gap:20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    width:100%;
-
-    padding:15px 20px;
-
-    background:#002b2b;
-
-    border-bottom:2px solid #ffffff5b;
+    background-color: #002b2b;
+    border: 2px solid #ffffff5b;
+    padding: 10px 20px;
 }
 
 .title{
@@ -295,111 +292,138 @@ h3{
 
 /* ---------------- TABLET ---------------- */
 
-@media(max-width:900px){
+@media (min-width: 768px) and (max-width: 1024px) {
 
-    .sidebar{
-
-        flex-direction:column;
-
-        align-items:center;
-
+    .sidebar {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
     }
 
-    .search{
-
-        width:100%;
-
-        max-width:600px;
-
+    .title {
+        width: 100%;
+        justify-content: center;
     }
 
-    .lista ul{
-
-        justify-content:center;
-
+    .search {
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    .musicas{
+    .search input {
+        width: 100%;
+    }
 
-        grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    .lista {
+        width: 100%;
+    }
 
-        padding:20px;
+    .lista ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
+    .musicas {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .musica {
+        width: 170px;
+        height: 250px;
+    }
+
+    .musica img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .musica h5 {
+        font-size: 18px;
+    }
+
+    .player {
+        width: 80%;
     }
 
 }
 
 /* ---------------- CELULAR ---------------- */
 
-@media (max-width: 600px){
+@media (max-width: 767px) {
 
-    .sidebar{
+    .sidebar {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         gap: 15px;
         padding: 15px;
     }
 
-    .title{
+    .title {
         justify-content: center;
+        margin: 0;
+    }
+
+    .search {
         width: 100%;
+        box-sizing: border-box;
     }
 
-    .search{
+    .search input {
         width: 100%;
-        max-width: 100%;
-        min-width: 100%;
-    }
-
-    .lista ul{
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .lista a{
         font-size: 16px;
     }
 
-    .musicas{
-        display: grid;
+    .lista ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .lista ul a {
+        font-size: 16px;
+    }
+
+    .musicas {
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
         padding: 15px;
-        justify-items: center;
     }
 
-    .musica{
-        width: 100%;
-        height: auto;
+    .musica {
+        width: 90px;
+        height: 150px;
         padding: 8px;
     }
 
-    .musica img{
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 8px;
+    .musica img {
+        width: 75px;
+        height: 75px;
     }
 
-    .musica h5{
-        font-size: 11px;
-        margin-top: 8px;
-        text-align: center;
+    .musica h5 {
+        font-size: 12px;
+        margin: 5px 0 0;
     }
 
-    .player{
-        width: 95%;
-        padding: 10px 15px;
+    .player {
+        width: calc(100% - 20px);
+        left: 10px;
+        right: 10px;
+        transform: none;
+        bottom: 10px;
+        box-sizing: border-box;
     }
 
-    .player img{
+    .player img {
         width: 50px;
         height: 50px;
     }
 
-    .player h4{
-        font-size: 15px;
+    .player h4 {
+        font-size: 14px;
     }
 
 }

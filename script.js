@@ -33,6 +33,37 @@ function tocarMusica(idAudio, nome, imagem) {
 
     // Toca
     musicaAtual.play();
+    if ("mediaSession" in navigator) {
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+        title: nome,
+        artist: "AutoFlow Music",
+        album: "AutoFlow",
+        artwork: [
+            {
+                src: imagem,
+                sizes: "512x512",
+                type: "image/png"
+            }
+        ]
+    });
+
+
+    navigator.mediaSession.setActionHandler("play", () => {
+        musicaAtual.play();
+    });
+
+
+    navigator.mediaSession.setActionHandler("pause", () => {
+        musicaAtual.pause();
+    });
+
+
+    navigator.mediaSession.setActionHandler("stop", () => {
+        stopMusica();
+    });
+
+}
 }
 
 function playPause() {
@@ -140,6 +171,18 @@ if ("serviceWorker" in navigator) {
     })
     .catch(erro => {
         console.log("Erro:", erro);
+    });
+
+}
+
+if ("mediaSession" in navigator) {
+
+    navigator.mediaSession.setActionHandler("play", () => {
+        playPause();
+    });
+
+    navigator.mediaSession.setActionHandler("pause", () => {
+        playPause();
     });
 
 }

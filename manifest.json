@@ -1,10 +1,12 @@
 {
   "name": "AutoFlow Music",
   "short_name": "AutoFlow",
-  "start_url": "./",
+  "description": "Ouça e baixe músicas gratuitamente",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#002b2b",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "./imagens/icon-192.png",

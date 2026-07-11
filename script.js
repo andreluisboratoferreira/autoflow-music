@@ -131,3 +131,23 @@ function baixarMusica() {
     document.body.removeChild(link);
 
 }
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(() => {
+
+                console.log("✅ Service Worker registrado!");
+
+            })
+            .catch((erro) => {
+
+                console.log("Erro:", erro);
+
+            });
+
+    });
+
+}

@@ -4,7 +4,8 @@ const arquivos = [
     "/",
     "/index.html",
     "/style.css",
-    "/script.js"
+    "/script.js",
+    "/manifest.json"
 ];
 
 self.addEventListener("install", (event) => {

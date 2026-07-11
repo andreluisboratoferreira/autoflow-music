@@ -134,20 +134,12 @@ function baixarMusica() {
 
 if ("serviceWorker" in navigator) {
 
-    window.addEventListener("load", () => {
-
-        navigator.serviceWorker.register("./service-worker.js")
-            .then(() => {
-
-                console.log("✅ Service Worker registrado!");
-
-            })
-            .catch((erro) => {
-
-                console.log("Erro:", erro);
-
-            });
-
+    navigator.serviceWorker.register("./service-worker.js")
+    .then(() => {
+        console.log("Service Worker ativo!");
+    })
+    .catch(erro => {
+        console.log("Erro:", erro);
     });
 
 }

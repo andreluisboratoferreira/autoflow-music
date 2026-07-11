@@ -1,4 +1,4 @@
-const CACHE_NAME = "autoflow-v3";
+const CACHE_NAME = "autoflow-v4";
 
 const arquivos = [
     "./",

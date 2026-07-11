@@ -429,32 +429,22 @@ h3{
 }
 
 .menu-contexto {
+    position: absolute;
     display: none;
-
-    position: fixed;
-
     background: #002b2b;
-
-    border: 2px solid #ffffff44;
-
+    color: white;
+    border: 2px solid #ffffff5b;
     border-radius: 10px;
-
-    overflow: hidden;
-
-    min-width: 200px;
-
+    padding: 10px;
     z-index: 9999;
 }
 
+
 .menu-contexto div {
-    padding: 12px 15px;
-
-    color: white;
-
+    padding: 10px;
     cursor: pointer;
-
-    transition: .2s;
 }
+
 
 .menu-contexto div:hover {
     background: #9900ff;

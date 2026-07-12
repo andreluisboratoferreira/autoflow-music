@@ -1,6 +1,6 @@
 {
   "name": "AutoFlow Music",
-  "short_name": "AutoFlow",
+  "short_name": "AutoFlow Music",
   "description": "Ouça e baixe músicas gratuitamente",
   "start_url": "./index.html",
   "display": "standalone",
@@ -18,5 +18,9 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "categories": [
+    "entertainment",
+    "music"
   ]
 }

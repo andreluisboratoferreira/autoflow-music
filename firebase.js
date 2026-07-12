@@ -1,3 +1,5 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { initializeApp } from 
 "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 
@@ -63,3 +65,28 @@ console.log(erro);
 
 
 });
+
+import { 
+    getFirestore,
+    doc,
+    setDoc,
+    getDoc
+} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+const db = getFirestore(app);
+
+await setDoc(doc(db, "usuarios", user.uid), {
+
+    nome: user.displayName,
+    email: user.email,
+    foto: user.photoURL,
+    criadoEm: new Date()
+
+});
+
+document.getElementById("nomeUsuario").innerHTML =
+user.displayName;
+
+
+document.getElementById("fotoUsuario").src =
+user.photoURL;

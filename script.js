@@ -343,3 +343,7 @@ function mostrarTodas(){
     });
 
 }
+
+function login(){
+    window.location.href = "./login.html"
+}

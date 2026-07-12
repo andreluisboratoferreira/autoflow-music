@@ -260,7 +260,6 @@ function favoritarAtual(){
         favoritos.filter(item=>item !== id);
 
 
-        alert("Removido dos favoritos ❌");
 
 
     }else{
@@ -269,7 +268,7 @@ function favoritarAtual(){
         favoritos.push(id);
 
 
-        alert("Adicionado aos favoritos ⭐");
+
 
 
     }

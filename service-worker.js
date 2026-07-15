@@ -1,4 +1,4 @@
-const CACHE_NAME = "autoflow-v6";
+const CACHE_NAME = "autoflow-v7";
 
 self.addEventListener("install", event => {
 
